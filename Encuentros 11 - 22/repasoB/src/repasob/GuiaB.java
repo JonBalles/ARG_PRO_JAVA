@@ -58,7 +58,7 @@ public class GuiaB {
          System.out.println("Ingrese hasta 8 caracteres");
          String frase = console.next();
          
-         if(frase.length() <= 8){
+         if(frase.length() == 8){
              System.out.println("Correcto");
          }else{
              System.out.println("Incorrecto");

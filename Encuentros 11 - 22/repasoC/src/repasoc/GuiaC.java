@@ -90,7 +90,8 @@ public class GuiaC {
                 a = console.nextInt();
                 System.out.println("Ingrese divisor");
                 b = console.nextInt();
-                System.out.println(a + " / " + b + " = " + (a/b));
+                double resultado = (a*1.0)/b;
+                System.out.println(a + " / " + b + " = " + resultado);
                 System.out.println("*--------------*");
                 break;
             case 5:
@@ -145,4 +146,112 @@ public class GuiaC {
         }
         
     }
+    
+    public static void elDispositivo(){
+              /*
+        . Escribir un método que simule el funcionamiento de un dispositivo RS232, este tipo de 
+    dispositivo lee cadenas enviadas por el usuario. Las cadenas deben llegar con un formato fijo: 
+    tienen que ser de un máximo de 5 caracteres de largo, el primer carácter tiene que ser X y el último 
+    tiene que ser una O. 
+    Las secuencias leídas que respeten el formato se consideran correctas, la secuencia especial 
+    “&&&&&” marca el final de los envíos (llamémosla FDE), y toda secuencia distinta de FDE, que 
+    no respete el formato se considera incorrecta. Al finalizar el proceso, se imprime un informe 
+    indicando la cantidad de lecturas correctas e incorrectas recibidas. Para resolver el ejercicio deberá 
+    investigar cómo se utilizan los siguientes métodos de la clase String: Substring(), Length(), 
+    equals().
+        */
+        Scanner console = new Scanner(System.in);
+        
+        int ok = 0;
+        int rejected = 0;
+        String comandos;
+        boolean on = true;
+        
+        System.out.println("Iniciando dispositivo RS232");
+        System.out.println("Puede iniciar envios FDE");
+
+        while(on){
+            comandos = console.next();
+            
+            if(comandos.length() <= 5){
+                if("X".equals(comandos.substring(0,1))&& "O".equals(comandos.substring((comandos.length() - 1 ),comandos.length()))){
+                    ok++;
+                    System.out.println("Lectura enviada");
+                }else if("&&&&&".equals(comandos)){
+                    on = false;
+                }else{
+                    rejected++;
+                    System.out.println("Lectura enviada");
+                }
+            }else{
+                rejected++;
+                System.out.println("Lectura incorrecta");
+            }
+            
+        }
+        System.out.println("*--*--*--*--*--*--*");
+        System.out.println("Lectura finalizada");
+        System.out.println("Total de lecturas correctas: " + ok);
+        System.out.println("Total de lecturas incorrectas: " + rejected);
+        System.out.println("Fin del programa");
+    }
+    
+    public static void dibujarCuadrado2(){
+        Scanner console = new Scanner(System.in);
+        
+        System.out.println("Ingrese la dimension del cuadrado:");
+        int dimension = console.nextInt();
+        int i = 0;
+        
+        while( i < dimension){
+            
+            for(int j = 0; j < dimension ; j++){
+              
+                if (i == 0 || i == dimension - 1 || j == 0 || j == dimension - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+               
+            } System.out.println("");
+            i++;
+        }
+       
+    }
+    
+    public static void escala(){
+        /* Realizar un método que lea 4 números (comprendidos entre 1 y 20) e imprima el número 
+        ingresado seguido de tantos asteriscos como indique su valor.*/
+        Scanner console = new Scanner(System.in);
+        int i = 0;
+        int numero;
+        //inicializamos array
+        int aux [];
+        aux = new int[4];
+        
+        while(i < 4){
+            System.out.println("Ingrese numeros (entre el 1 y el 20)");
+            numero = console.nextInt();
+            
+            if(numero > 20 || numero < 1 ){
+                System.out.println("Error");
+            }else{
+                aux[i] = numero;
+                i++; 
+            }
+        }
+       
+        System.out.println("*-----------*");
+        
+        for(int j = 0; j < aux.length; j++){
+            System.out.print(aux[j]);
+            for(int k = 0 ; k <= (aux[j] - 1); k++){
+                System.out.print(" *");
+            }
+            System.out.println("");
+        }
+       
+    }
+
+   
 }

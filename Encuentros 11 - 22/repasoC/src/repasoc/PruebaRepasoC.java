@@ -20,11 +20,13 @@ public class PruebaRepasoC {
         System.out.println("*------E15------*");
        // GuiaC.bucancoCero();
         System.out.println("*------E16------*");
-       // 
+       // GuiaC.elDispositivo();
         System.out.println("*------E17------*");
-       // 
+       // GuiaC.dibujarCuadrado2();
         System.out.println("*------E18------*");
-       // 
+       // GuiaC.escala();
+       
+        
     }
 
 }
