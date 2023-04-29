@@ -187,6 +187,9 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
         /*Crear un método dentro del cual permita la entrada desde teclado de la altura de N personas y 
     determinar el promedio de estaturas que se encuentran por debajo de 1.60 mts. y el promedio de 
     estaturas en general.*/
+        
+        // Para usar DecimalFormat, hay que hacer el siguiente import: import java.text.DecimalFormat
+        //DecimalFormat limita a los decimales segun la cantidad de 00 que se les pase por parametro
         DecimalFormat df = new DecimalFormat("#.00");
         int i = 0;
         int chiquis = 0;
@@ -214,4 +217,189 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
 
     }
 
+    // menorMayor pide dos metodos. Uno con While y el otro do/While
+    public static void menorMayor(){
+            /*. Realice un método que calcule y visualice el valor máximo, el valor mínimo y el promedio de 
+            n números (n>0). El valor de n se solicitará al principio del programa y los números serán 
+            introducidos por el usuario. Realice dos versiones del método, una usando el bucle “while” y otra 
+            con el bucle “do - while”*/
+            int i = 0;
+            int menor = 99999;
+            int mayor = 0;
+            int total = 0;
+            
+            System.out.println("Ingrese la cantidad de valores a evaluar");
+            int cantidad = console.nextInt();
+
+            while(i< cantidad){
+                System.out.println("Ingrese valor " + (i + 1));
+                int valor = console.nextInt();
+                menor = Math.min(menor, valor);
+                mayor = Math.max(mayor, valor);
+                total = total + valor;
+                i++; 
+            }
+           System.out.println("El mayor es " + mayor);
+           System.out.println("El minimo es: " + menor);
+           System.out.println("El promedio es " + (total / cantidad));
+           
+        }
+    
+    
+ 
+    public static void multiplo5(){
+         /* . Escriba un método que lea números enteros. Si el número es múltiplo de cinco debe detener la 
+        lectura y mostrar la cantidad de números leídos, la cantidad de números pares y la cantidad de 
+        números impares. Al igual que en el ejercicio anterior los números negativos no deben sumarse. 
+        Nota: recordar el uso de la sentencia break*/
+       int valor, cantidad = 0, pares = 0, impares = 0;
+       
+       
+        do{
+            System.out.println("Ingrese numeros enteros");
+            valor = console.nextInt();
+            if(valor>0){
+                cantidad++;
+                if(valor% 2 ==0){
+                pares++;
+                }else{
+                impares++;
+                }
+            }
+        }while(valor % 5 != 0);
+        
+        System.out.println("Cantidad de numeros ingresados: " + cantidad);
+        System.out.println("Cantidad de pares: " + pares);
+        System.out.println("Cantidad de impares: " + impares);
+        
+    }
+    
+    public static void simulandoDivisiones(){
+        /*Simular la división usando solamente restas. Dados dos números enteros mayores que uno, 
+        realizar un algoritmo que calcule el cociente y el residuo usando sólo restas.
+        Método: Restar el dividendo del divisor hasta obtener un resultado menor que el divisor,
+        este resultado es el residuo, y el número de restas realizadas es el cociente.
+        Por ejemplo: 50 / 13: 
+        50 – 13 = 37 una resta realizada 
+        37 – 13 = 24 dos restas realizadas 
+        24 – 13 = 11 tres restas realizadas 
+        Crear un método con el algoritmo necesario para dar solución a lo propuesto. */
+        
+        int valor, divisor, residuo = 0, cociente =0;
+        System.out.println("Ingrese el numero a dividir");
+        valor = console.nextInt();
+        System.out.println("Ingrese el divisor");
+        divisor = console.nextInt();
+        residuo = valor;
+        while(divisor <= residuo){
+          residuo =  residuo - divisor;
+          cociente++;
+        }
+        System.out.println("el resultado de la division de " + valor + " / " + divisor + " es: " + cociente);
+        System.out.println("residuo " + residuo);
+    }
+    
+    public static void adivinando(){
+        /*. Realice un método para que el usuario adivine el resultado de una multiplicación entre dos 
+    números generados aleatoriamente entre 0 y 10. El programa debe indicar al usuario si su respuesta 
+    es o no correcta. En caso que la respuesta sea incorrecta se debe permitir al usuario ingresar su 
+    respuesta nuevamente. Para realizar este ejercicio investigue como utilizar la función 
+    Math.random() de Java */
+        int i = (int) (Math.random() * 10);
+        int j = (int) (Math.random() * 10);
+        int secreto = i * j;
+        
+        System.out.println("Adivine el numero secreto");
+        int respuesta = console.nextInt();
+        while(respuesta != secreto){
+            System.out.println("Nop. ese no es.");
+            if(secreto>respuesta){
+                System.out.println("Es mas alto el valor!");
+            }else{
+                System.out.println("Es menor el valor");
+            }
+            respuesta = console.nextInt();
+        }
+        System.out.println("Felicitaciones! El numero era " + secreto);
+        System.out.println("Te ganaste un 0km!");
+    }
+    
+    public static void digitos(){
+            System.out.println("Ingrese un número entero:");
+            int num = console.nextInt();
+            int contador = 0;
+            while(num!=0){
+                num = num/10;
+                contador++;              
+            }
+            System.out.println("El número tenía " + contador + " dígitos");
+        }
+            
+    public static void contador(){
+        
+    /* Necesitamos mostrar un contador con 3 dígitos (X-X-X), que muestre los números del 0-0-0 
+    al 9-9-9, con la particularidad que cada vez que aparezca un 3 lo sustituya por una E. Ejemplo:
+    0-0-0
+    0-0-1
+    0-0-2
+    0-0-E
+    0-0-4
+    0-1-2
+    0-1-E
+    Crear un método que dé solución a lo propuesto en el enunciado. */
+      
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                
+                for (int k = 0; k < 10; k++)
+                {
+                    if(i == 3){
+                        System.out.print("E - ");
+                    }else{
+                        System.out.print(i + " - ");
+                    }
+                    
+                    if(j == 3){
+                        System.out.print("E - ");
+                    }else{
+                        System.out.print(j + " - ");
+                    }
+                    
+                    if(k == 3){
+                        System.out.println("E");
+                    }else{
+                        System.out.println(k);
+                    }
+                    
+                }
+               
+            }
+             
+        }
+    
+    
+    }
+    
+    public static void escalera(){
+        /*Crear un método que dibuje una escalera de números, donde cada línea de números comience 
+    en uno y termine en el número de la línea. Solicitar la altura de la escalera al usuario al comenzar. 
+    Ejemplo: si se ingresa el número 3: 
+    1
+    12
+    123*/
+        int contador = 1;
+        System.out.println("Ingrese la cantidad de escalones");
+        int cantidad = console.nextInt();
+        
+        do{
+        for(int i = 1 ; i <= contador ; i++){
+            System.out.print(i);
+        }
+            System.out.println("");
+            contador++;
+        }while(contador <= cantidad);
+        
+    }
 }
