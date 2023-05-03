@@ -7,7 +7,7 @@ public class ExtrasG1 {
 
     // Declaramos un Scanner de scope global para agilizar su llamado
     static Scanner console = new Scanner(System.in);
-
+    // Ejercicio1
     public static void minutosPor() {
         /*
     Crear un método que dado un tiempo en minutos leído desde teclado, calcular su equivalente en 
@@ -25,7 +25,7 @@ public class ExtrasG1 {
         System.out.println("Minutos a dias: " + dias);
 
     }
-
+    // Ejercicio2
     public static void mixer() {
         /*
     . Crear un método dentro del cual tendrá cuatro variables de tipo entero A, B, C y D y asignarle 
@@ -57,7 +57,7 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
         System.out.println("Valor final de D: " + D);
 
     }
-
+    // Ejercicio3
     //El siguiente ejercicio se planteo de diferentes maneras y decidimos crear ambos
     public static void vocalCheck() {
         /*
@@ -92,7 +92,7 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
         }
 
     }
-
+    // Ejercicio3.2
     public static void vocalCheck2() {
         boolean check = false;
         String vocales[];
@@ -123,20 +123,77 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
         }
 
     }
-
+    // Ejercicio4
     public static void numerosRomanos() {
         String romanos[] =
         {
             "0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"
         };
-
+        int num;
+        do{
         System.out.println("Ingrese un numero del 1 - 10");
-        int num = console.nextInt();
-
+        num = console.nextInt();
+         if(num > 10|| num < 0){
+             System.out.println("Valor fuera de rango");
+            break;
+        }
         System.out.println("El numero en romano es: " + romanos[num]);
-
+       
+        }while(num < 10 || num > 0);
     }
-
+    // Ejercicio4.2 by Juana Leranoz
+    public static void numerosRomanos2() {
+        System.out.println("Ingrese un numero entre el 1 y el 10");
+        int num;
+        num = console.nextInt();
+        while (num < 1 || num > 10) {
+            System.out.println("El numero ingresado no es valido. Vuelva a intentarlo.");
+            num = console.nextInt();
+        }
+        switch (num) {
+            case 1: {
+                System.out.println("I");
+                break;
+            }
+            case 2: {
+                System.out.println("II");
+                break;
+            }
+            case 3: {
+                System.out.println("III");
+                break;
+            }
+            case 4: {
+                System.out.println("IV");
+                break;
+            }
+            case 5: {
+                System.out.println("V");
+                break;
+            }
+            case 6: {
+                System.out.println("VI");
+                break;
+            }
+            case 7: {
+                System.out.println("VII");
+                break;
+            }
+            case 8: {
+                System.out.println("VIII");
+                break;
+            }
+            case 9: {
+                System.out.println("IX");
+                break;
+            }
+            case 10: {
+                System.out.println("X");
+                break;
+            }
+        }
+    }
+   // Ejercicio5
     public static void obraSocial() {
         /*  Una obra social tiene tres clases de socios: 
      Los socios tipo ‘A’ abonan una cuota mayor, pero tienen un 50% de descuento en todos 
@@ -181,7 +238,7 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
         } while (on);
 
     }
-
+    // Ejercicio6
     public static void altura() {
 
         /*Crear un método dentro del cual permita la entrada desde teclado de la altura de N personas y 
@@ -216,7 +273,7 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
         System.out.println("Promedio general " + df.format(todos / cantidad));
 
     }
-
+    // Ejercicio7
     // menorMayor pide dos metodos. Uno con While y el otro do/While
     public static void menorMayor(){
             /*. Realice un método que calcule y visualice el valor máximo, el valor mínimo y el promedio de 
@@ -238,15 +295,44 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
                 mayor = Math.max(mayor, valor);
                 total = total + valor;
                 i++; 
-            }
+            } 
            System.out.println("El mayor es " + mayor);
            System.out.println("El minimo es: " + menor);
            System.out.println("El promedio es " + (total / cantidad));
            
         }
-    
-    
+    // Ejercicio7 (do/while) by Juana Leranoz
+    public static void menorMayorDo() {
+        int n, i = 0, j = 0;
+        double max, min, suma = 0, promedio;
+        System.out.println("Ingrese la cantidad de n valores que desea evaluar: ");
+        n = console.nextInt();
+        double[] num = new double[n];
+        System.out.println("Ahora ingrese los numeros que seran evaluados:");
+        do {
+            num[i] = console.nextDouble();
+            i++;
+        } while (i < n);
+        max = num[0];
+        min = num[0];
+        do {
+            if (num[j] > max) {
+                max = num[j];
+            }
+            if (num[j] < min) {
+                min = num[j];
+            }
+            suma += num[j];
+            j++;
+        } while (j < n);
+        promedio = suma / n;
+        System.out.println("El valor maximos es: " + max);
+        System.out.println("El valor minimo es: " + min);
+        System.out.println("El promedio de los numeros ingresados es: " + promedio);
+
+    }
  
+    // Ejercicio8
     public static void multiplo5(){
          /* . Escriba un método que lea números enteros. Si el número es múltiplo de cinco debe detener la 
         lectura y mostrar la cantidad de números leídos, la cantidad de números pares y la cantidad de 
@@ -273,7 +359,7 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
         System.out.println("Cantidad de impares: " + impares);
         
     }
-    
+    // Ejercicio9
     public static void simulandoDivisiones(){
         /*Simular la división usando solamente restas. Dados dos números enteros mayores que uno, 
         realizar un algoritmo que calcule el cociente y el residuo usando sólo restas.
@@ -285,11 +371,14 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
         24 – 13 = 11 tres restas realizadas 
         Crear un método con el algoritmo necesario para dar solución a lo propuesto. */
         
-        int valor, divisor, residuo = 0, cociente =0;
+        int valor, divisor, residuo, cociente =0;
+       
         System.out.println("Ingrese el numero a dividir");
         valor = console.nextInt();
+        
         System.out.println("Ingrese el divisor");
         divisor = console.nextInt();
+       
         residuo = valor;
         while(divisor <= residuo){
           residuo =  residuo - divisor;
@@ -298,7 +387,7 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
         System.out.println("el resultado de la division de " + valor + " / " + divisor + " es: " + cociente);
         System.out.println("residuo " + residuo);
     }
-    
+    // Ejercicio10
     public static void adivinando(){
         /*. Realice un método para que el usuario adivine el resultado de una multiplicación entre dos 
     números generados aleatoriamente entre 0 y 10. El programa debe indicar al usuario si su respuesta 
@@ -323,7 +412,7 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
         System.out.println("Felicitaciones! El numero era " + secreto);
         System.out.println("Te ganaste un 0km!");
     }
-    
+    // Ejercicio11
     public static void digitos(){
             System.out.println("Ingrese un número entero:");
             int num = console.nextInt();
@@ -334,7 +423,7 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
             }
             System.out.println("El número tenía " + contador + " dígitos");
         }
-            
+    // Ejercicio12
     public static void contador(){
         
     /* Necesitamos mostrar un contador con 3 dígitos (X-X-X), que muestre los números del 0-0-0 
@@ -381,7 +470,7 @@ los valores iniciales y los valores finales de cada variable. Utilizar sólo una
     
     
     }
-    
+    // Ejercicio13
     public static void escalera(){
         /*Crear un método que dibuje una escalera de números, donde cada línea de números comience 
     en uno y termine en el número de la línea. Solicitar la altura de la escalera al usuario al comenzar. 

@@ -37,10 +37,11 @@ public class TestExtraG1 {
         System.out.println("*------E11------*");
         ExtrasG1.digitos();
         System.out.println("*------E12------*");
-        ExtrasG1.contador();*/
+        ExtrasG1.contador();
         System.out.println("*------E13------*");
-        ExtrasG1.escalera();
-        
+        ExtrasG1.escalera();*/
+     
+     ExtrasG1.adivinando();
     }
 
 }
