@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="guia3ej1extra">
+  <ClassDiagramComponents>
+    <Class name="GPS" package="guia3ej1extra" visibility="public" xPosition="41.0" yPosition="138.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="ultimaUbicacion" type="Posicion" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="obtenerUltimaPosicion" returnType="Posicion" visibility="public"/>
+        <Method name="mover" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Guia3Ej1Extra" package="guia3ej1extra" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="guia3ej1extra" visibility="public" xPosition="650.0" yPosition="60.0">
+      <Fields>
+        <Field name="apellido" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="ubicarme" returnType="void" visibility="public">
+          <Argument type="GPS" name="gps"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Posicion" package="guia3ej1extra" visibility="public" xPosition="340.0" yPosition="276.0">
+      <Fields>
+        <Field name="latitud" type="double" visibility="private"/>
+        <Field name="longitud" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="latitud"/>
+          <Argument type="double" name="longitud"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getLatitud" returnType="double" visibility="public"/>
+        <Method name="setLatitud" returnType="void" visibility="public">
+          <Argument type="double" name="latitud"/>
+        </Method>
+        <Method name="getLongitud" returnType="double" visibility="public"/>
+        <Method name="setLongitud" returnType="void" visibility="public">
+          <Argument type="double" name="longitud"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="guia3ej1extra.GPS" target="guia3ej1extra.Posicion" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="guia3ej1extra.Persona" target="guia3ej1extra.GPS" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ultimaUbicacion" source="guia3ej1extra.GPS" target="guia3ej1extra.Posicion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

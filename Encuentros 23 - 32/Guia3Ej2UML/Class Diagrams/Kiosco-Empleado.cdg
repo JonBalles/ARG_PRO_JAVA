@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Kiosco-Empleado">
+  <ClassDiagramComponents>
+    <Class name="Kiosco" package="" visibility="public" xPosition="48.0" yPosition="21.0">
+      <Fields>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="cuit" type="int" visibility="private"/>
+        <Field name="Empleado1" type="Object" visibility="private"/>
+        <Field name="Empleado2" type="Object" visibility="private"/>
+        <Field name="Empleado3" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="contratar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Empleado" package="" visibility="public" xPosition="244.0" yPosition="335.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="fechaDeIngreso" type="long" visibility="private"/>
+        <Field name="dni" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
