@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Barcos">
+  <ClassDiagramComponents>
+    <Class name="Alquiler" package="" visibility="public" xPosition="38.0" yPosition="62.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="documentoCliente" type="int" visibility="private"/>
+        <Field name="fechaAlquiler" type="LocalDate" visibility="private"/>
+        <Field name="fechaDevolucion" type="LocalDate" visibility="private"/>
+        <Field name="posicionAmarreX" type="int" visibility="private"/>
+        <Field name="posicionAmarreY" type="int" visibility="private"/>
+        <Field name="barco" type="Barco" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Barco" package="" visibility="public" xPosition="296.0" yPosition="90.0">
+      <Fields>
+        <Field name="matricula" type="String" visibility="private"/>
+        <Field name="eslora" type="double" visibility="private"/>
+        <Field name="anioFabricacion" type="LocalDate" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Yate de lujo" package="" visibility="public" xPosition="645.0" yPosition="18.0">
+      <Fields>
+        <Field name="potenciaCV" type="int" visibility="private"/>
+        <Field name="camarotes" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Velero" package="" visibility="public" xPosition="645.0" yPosition="194.0">
+      <Fields>
+        <Field name="mastiles" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="BarcoVapor" package="" visibility="public" xPosition="645.0" yPosition="353.0">
+      <Fields>
+        <Field name="potenciaCV" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Velero" target="Barco"/>
+    <HasRelation name="Tiene un" source="Alquiler" target="Barco" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="BarcoVapor" target="Barco"/>
+    <IsRelation name="is" source="Yate de lujo" target="Barco"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

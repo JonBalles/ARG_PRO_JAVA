@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Guia4EjExtra1">
+  <ClassDiagramComponents>
+    <Class name="Alquiler" package="guia4ejextra1" visibility="public" xPosition="2.0" yPosition="137.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="documentoCliente" type="int" visibility="private"/>
+        <Field name="fechaAlquiler" type="LocalDate" visibility="private"/>
+        <Field name="fechaDevolucion" type="LocalDate" visibility="private"/>
+        <Field name="posicionAmarre" type="String" visibility="private"/>
+        <Field name="barco" type="Barco" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="documentoCliente"/>
+          <Argument type="LocalDate" name="fechaAlquiler"/>
+          <Argument type="LocalDate" name="fechaDevolucion"/>
+          <Argument type="String" name="posicionAmarre"/>
+          <Argument type="Barco" name="barco"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="costoAlquiler" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Barco" package="guia4ejextra1" visibility="public" xPosition="885.0" yPosition="87.0">
+      <Fields>
+        <Field name="matricula" type="String" visibility="protected"/>
+        <Field name="eslora" type="double" visibility="protected"/>
+        <Field name="anioFabricacion" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="matricula"/>
+          <Argument type="double" name="eslora"/>
+          <Argument type="int" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calcularModulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BarcoVapor" package="guia4ejextra1" visibility="public" xPosition="932.0" yPosition="477.0">
+      <Fields>
+        <Field name="potenciaCV" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="matricula"/>
+          <Argument type="double" name="eslora"/>
+          <Argument type="int" name="anioFabricacion"/>
+          <Argument type="int" name="potenciaCV"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPotenciaCV" returnType="int" visibility="public"/>
+        <Method name="calcularModulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Guia4EjExtra1" package="guia4ejextra1" visibility="public" xPosition="312.0" yPosition="558.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Velero" package="guia4ejextra1" visibility="public" xPosition="1313.0" yPosition="29.0">
+      <Fields>
+        <Field name="mastiles" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="matricula"/>
+          <Argument type="double" name="eslora"/>
+          <Argument type="int" name="anioFabricacion"/>
+          <Argument type="int" name="mastiles"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMastiles" returnType="int" visibility="public"/>
+        <Method name="calcularModulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="YateLujoso" package="guia4ejextra1" visibility="public" xPosition="1268.0" yPosition="219.0">
+      <Fields>
+        <Field name="potenciaCV" type="int" visibility="private"/>
+        <Field name="camarotes" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="matricula"/>
+          <Argument type="double" name="eslora"/>
+          <Argument type="int" name="anioFabricacion"/>
+          <Argument type="int" name="potenciaCV"/>
+          <Argument type="int" name="camarotes"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPotenciaCV" returnType="int" visibility="public"/>
+        <Method name="getCamarotes" returnType="int" visibility="public"/>
+        <Method name="calcularModulo" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="barco" source="guia4ejextra1.Alquiler" target="guia4ejextra1.Barco" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="guia4ejextra1.Velero" target="guia4ejextra1.Barco"/>
+    <IsRelation name="is" source="guia4ejextra1.BarcoVapor" target="guia4ejextra1.Barco"/>
+    <IsRelation name="is" source="guia4ejextra1.YateLujoso" target="guia4ejextra1.Barco"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

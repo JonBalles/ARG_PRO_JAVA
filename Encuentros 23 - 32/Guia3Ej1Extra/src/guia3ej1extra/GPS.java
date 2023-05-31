@@ -8,6 +8,7 @@ private Posicion ultimaUbicacion;
 public GPS(String marca, String modelo){
     this.marca = marca;
     this.modelo = modelo;
+    
 }
 /*
 - mover() Este método generará una nueva Posición con valores aleatorios para la latitud 
@@ -24,7 +25,8 @@ public void mover(){
     double latitud = Math.random();
     double longitud = Math.random();
     
-    ultimaUbicacion = new Posicion(latitud, longitud);
+    ultimaUbicacion.setLatitud(latitud);
+    ultimaUbicacion.setLongitud(longitud);
  
 }
 
